@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楚漆壁纸</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div id="slide">
+            <div class="item" style="background-image: url(1.jpg);">
+            <div class="content">
+                <div class="name">楚漆图案</div>
+                <div class="des">楚漆图案，特别是其中的凤鸟纹，千姿百态、变化莫测，或写实或抽象，或夸张变形，或象征概括。</div>
+            </div>
+            </div>
+            <div class="item" style="background-image: url(2.jpg);">
+                <div class="content">
+                    <div class="name">楚漆图案</div>
+                    <div class="des">它们不仅体现了楚人“人心营构之象”，更是楚人理想和寄托的化身，成为真善美的神灵，是吉祥美好、力量和正义的象征符号。这种象征与寓意使楚漆图案具有深厚的文化内涵。</div>
+                </div>
+                </div>
+                <div class="item" style="background-image: url(3.jpg);">
+                    <div class="content">
+                        <div class="name">楚漆图案</div>
+                        <div class="des">楚漆图案在构图和线条运用上展现了极高的艺术造诣。构图方式以“圆”为多，古人通常指代为天，又有丰满、饱满、圆满之意。</div>
+                    </div>
+                    </div>
+                    <div class="item" style="background-image: url(4.jpg);">
+                        <div class="content">
+                            <div class="name">楚漆图案</div>
+                            <div class="des">线条流动舒畅、富于韵律感，无论是简单的几何图形还是复杂的故事场景，都能用简洁流畅的线来表现，体现了楚人对于美的独特追求和创造。</div>
+                        </div>
+                        </div>
+                        <div class="item" style="background-image: url(5.jpg);">
+                            <div class="content">
+                                <div class="name">楚漆图案</div>
+                                <div class="des">楚漆图案作为楚文化的重要组成部分，通过其独特的艺术形式和深厚的文化内涵，传承了千年的楚韵。</div>
+                            </div>
+                            </div>
+                            <div class="item" style="background-image: url(6.jpg);">
+                                <div class="content">
+                                    <div class="name">楚漆图案</div>
+                                    <div class="des">楚漆图案也展示了楚式漆器的制作工艺和技巧。漆器的制作需要精湛的技艺和独特的审美，而楚漆图案的复杂多变和精致细腻，正是楚式漆器制作工艺高超的体现。</div>
+                                </div>
+                                </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+            <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+    </div>
+    <style>
+        body{
+    background-color: #f5f5f5;
+    overflow: hidden;
+
+}
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 1000px;
+    height: 600px;
+    padding: 50px;
+    background-color: #f5f5f5;
+    box-shadow: 0 30px 50px #bdbdbd;
+}
+
+#slide{
+    width: max-content;
+    margin-top: 50px;
+}
+.item{
+    width: 200px;
+    height: 300px;
+    background-position: 50% 50%;
+    display: inline-block;
+    transition: 0.5s;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(0,-50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+}
+
+.item:nth-child(1),
+.item:nth-child(2){
+    left: 0;
+    top:0;
+    transform: translate(0,0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+}
+.item:nth-child(3){
+    left: 50%;
+}
+.item:nth-child(4){
+    left: calc(50% + 220px);
+}
+.item:nth-child(5){
+    left: calc(50% + 440px);
+}
+.item:nth-child(n+6){
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+.item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    padding: 0;
+    color: #eee;
+    transform: translate(0,-50%);
+    display: none;
+    font-family: system-ui;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 5);
+}
+
+.item:nth-child(2) .content{
+    display: block;
+    z-index: 11111;
+}
+.item .name{
+    font-size: 40px;
+    font-weight:bold;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 1 forwards
+}
+.item .des{
+    margin: 20px 0;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 0.3s 1 forwards
+}
+.item .button{
+    padding: 10px 20px;
+    border: none;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 0.6s 1 forwards
+}
+
+@keyframes showcontent{
+    from{
+        opacity: 0;
+        transform: translate(0,100px);
+        filter: blur(33px);
+    }to{
+        opacity: 1;
+        transform: translate(0,0);
+        filter: blur(0);
+    }
+}
+.buttons{
+    position: absolute;
+    bottom: 30px;
+    z-index: 222222;
+    text-align: center;
+    width: 100%;
+}
+.buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #555;
+    transition: 0.5s;
+}.buttons button:hover{
+    background-color: #bac383;
+}
+    </style>
+    <script>
+        document.getElementById('next').onclick=function(){
+    let lists=document.querySelectorAll('.item');
+    document.getElementById('slide').appendChild(lists[0]);
+}
+
+document.getElementById('prev').onclick=function(){
+    let lists=document.querySelectorAll('.item');
+    document.getElementById('slide').prepend(lists[lists.length-1]);
+}
+    </script>
+</body>
+</html>
